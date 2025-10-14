@@ -6,7 +6,7 @@
 
 <br>
 
-# Nome do projeto
+# FarmTech
 
 ## Nome do grupo
 
@@ -26,7 +26,23 @@
 
 ## 📜 Descrição
 
-*Descreva seu projeto com base no texto do PBL (até 600 palavras)*
+Este projeto foi desenvolvido no âmbito do Problem Based Learning (PBL) com o tema Agronegócio, e consiste em uma solução de software para o gerenciamento de insumos agrícolas, com foco específico no controle de estoque e validade de sementes.
+
+O agronegócio é um pilar fundamental da economia brasileira, um setor que vai muito além da fazenda e que hoje é sinônimo de inovação e tecnologia (AgroTech). No entanto, um dos desafios enfrentados por pequenos e médios produtores é a gestão eficiente de seus insumos. Perdas de sementes por vencimento, falta de controle sobre a quantidade disponível e dificuldade no planejamento de safras são problemas reais que impactam diretamente a produtividade e a lucratividade.
+
+Visando solucionar essa "dor", este sistema oferece uma ferramenta simples e funcional, desenvolvida em Python e operada via terminal (interface de linha de comando). A aplicação se conecta a um banco de dados Oracle para garantir a persistência e a segurança dos dados, permitindo ao produtor realizar as seguintes operações:
+
+<b>Cadastrar:</b> Adicionar novos tipos de sementes ao estoque, com informações de nome, quantidade e data de validade.
+
+<b>Listar:</b> Visualizar de forma organizada todas as sementes em estoque, com um sistema de status que alerta sobre a proximidade do vencimento.
+
+<b>Editar e Excluir:</b> Atualizar informações de sementes existentes ou remover itens do estoque.
+
+<b>Buscar:</b> Pesquisar rapidamente por uma semente específica pelo nome.
+
+<b>Verificar Validade:</b> Gerar um relatório focado em sementes que estão vencidas ou que irão vencer nos próximos 30 dias.
+
+O projeto materializa o conceito de AgroTech ao aplicar tecnologia para resolver um problema prático do campo, oferecendo uma solução robusta para otimizar o controle de insumos, reduzir desperdícios e auxiliar na tomada de decisões estratégicas do produtor rural.
 
 
 ## 📁 Estrutura de pastas
@@ -49,21 +65,60 @@ Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
 
 ## 🔧 Como executar o código
 
-*Acrescentar as informações necessárias sobre pré-requisitos (IDEs, serviços, bibliotecas etc.) e instalação básica do projeto, descrevendo eventuais versões utilizadas. Colocar um passo a passo de como o leitor pode baixar o seu código e executá-lo a partir de sua máquina ou seu repositório. Considere a explicação organizada em fase.*
+Pré-requisitos
+Antes de começar, garanta que você tenha os seguintes softwares instalados:
+
+Python: Versão 3.10 ou superior.
+
+Git: Para clonar o repositório.
+
+Acesso a um Banco de Dados Oracle: O sistema foi configurado para se conectar a uma instância Oracle. As credenciais e o endereço do banco precisam ser configurados.
+
+Instalação e Configuração
+Clone o repositório:
+Abra seu terminal e execute o seguinte comando:
+
+Bash
+
+git clone https://github.com/Project-FIAP/Fase-2.git
+Navegue até a pasta do projeto:
+
+Bash
+
+cd Fase-2/python_e_alem
+Instale as dependências:
+O projeto requer a biblioteca oracledb para se comunicar com o banco de dados. Instale-a usando o pip:
+
+Bash
+
+pip install oracledb
+Configure o Banco de Dados:
+A. Crie a tabela de sementes na sua instância Oracle executando o seguinte script SQL:
+
+SQL
+
+CREATE TABLE TBL_SEMENTES (
+    ID_SEMENTE      NUMBER GENERATED AS IDENTITY PRIMARY KEY,
+    NOME            VARCHAR2(100) NOT NULL,
+    QUANTIDADE      NUMBER(10) NOT NULL,
+    DT_VALIDADE     DATE,
+    CONSTRAINT chk_quantidade_positiva CHECK (QUANTIDADE >= 0)
+);
+B. Abra o arquivo database.py e atualize as variáveis user, password e dsn com as suas credenciais de acesso ao banco de dados Oracle.
+
+Execução
+Após a configuração, execute o programa principal a partir do terminal, na pasta do projeto:
+
+Bash
+
+python "#Gerenciamento de Sementes.py"
+O menu interativo da aplicação será exibido no terminal, e você poderá começar a usar o sistema.
 
 
 ## 🗃 Histórico de lançamentos
 
-* 0.5.0 - XX/XX/2024
-    * 
-* 0.4.0 - XX/XX/2024
-    * 
-* 0.3.0 - XX/XX/2024
-    * 
-* 0.2.0 - XX/XX/2024
-    * 
-* 0.1.0 - XX/XX/2024
-    *
+* 0.1.0 - 14/10/2024
+  
 
 ## 📋 Licença
 
