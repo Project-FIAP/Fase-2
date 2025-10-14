@@ -15,7 +15,7 @@
 - <a href="https://www.linkedin.com/company/inova-fusca">Marlon Paulino Marinho</a>
 - <a href="https://www.linkedin.com/company/inova-fusca">Pedro Carvalho Rocha Lima</a> 
 - <a href="https://www.linkedin.com/company/inova-fusca">Vinicius Lisboa Porto</a> 
-- <a href="www.linkedin.com/in/vinigama">Vinicius de Santana Gama</a>
+- <a href="https://www.linkedin.com/in/vinigama">Vinicius de Santana Gama</a>
 
 ## 👩‍🏫 Professores:
 ### Tutor(a) 
