@@ -24,7 +24,7 @@
 - <a href="https://www.linkedin.com/company/inova-fusca">Nome do Coordenador</a>
 
 
-## 📜 Descrição
+## 📜 Descrição Python e além
 
 Este projeto foi desenvolvido no âmbito do Problem Based Learning (PBL) com o tema Agronegócio, e consiste em uma solução de software para o gerenciamento de insumos agrícolas, com foco específico no controle de estoque e validade de sementes.
 
