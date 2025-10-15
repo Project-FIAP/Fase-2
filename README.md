@@ -24,7 +24,7 @@ O projeto é modularizado em três diretórios principais, cada um contendo uma 
 - <b>/PythonAlem</b>: Contém o código utilizado para o desenvolvimento da solução de software para o gerenciamento de insumos agrícolas. Trata-se de uma aplicação de linha de comando (CLI) em Python que permite o cadastro, listagem, edição e exclusão de sementes, com dados persistidos em um banco de dados Oracle.
 
 <p align="center">
-<img src="assets/gestao_semente_terminal.png.png" alt="Imagem Gestão de Semente no terminal de comando" border="0" width=30% height=30%>
+<img src="assets/gestao_semente_terminal.png" alt="Imagem Gestão de Semente no terminal de comando" border="0" width=30% height=30%>
 </p>
 
 - <b>/mapadotesouro</b>: Neste diretório está o projeto de hardware e IoT. Utilizando uma placa ESP32, sensores de temperatura, umidade e luminosidade, o sistema é projetado para o monitoramento e controle de ambientes agrícolas. O projeto foi desenvolvido com PlatformIO e pode ser simulado no Wokwi.
