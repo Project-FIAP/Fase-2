@@ -14,88 +14,71 @@
 - <a href="https://www.linkedin.com/company/inova-fusca">Danilo Marques Dantas</a>
 - <a href="https://www.linkedin.com/in/marlonmarinho/">Marlon Paulino Marinho</a>
 - <a href="https://www.linkedin.com/in/pedro-carvalho-cea-149658137/">Pedro Carvalho Rocha Lima</a> 
-- <a href="https://www.linkedin.com/company/inova-fusca">Vinicius Lisboa Porto</a> 
+- <a href="https://www.linkedin.com/in/viniciusl7">Vinicius Lisboa Porto</a> 
 - <a href="https://www.linkedin.com/in/vinigama">Vinicius de Santana Gama</a>
 
-## 📜 Descrição Python e além
+## 📜 Descrição
 
-Este projeto foi desenvolvido no âmbito do Problem Based Learning (PBL) com o tema Agronegócio, e consiste em uma solução de software para o gerenciamento de insumos agrícolas, com foco específico no controle de estoque e validade de sementes.
+O projeto é modularizado em três diretórios principais, cada um contendo uma solução específica:
 
-O agronegócio é um pilar fundamental da economia brasileira, um setor que vai muito além da fazenda e que hoje é sinônimo de inovação e tecnologia (AgroTech). No entanto, um dos desafios enfrentados por pequenos e médios produtores é a gestão eficiente de seus insumos. Perdas de sementes por vencimento, falta de controle sobre a quantidade disponível e dificuldade no planejamento de safras são problemas reais que impactam diretamente a produtividade e a lucratividade.
+- <b>/PythonAlem</b>: Contém o código utilizado para o desenvolvimento da solução de software para o gerenciamento de insumos agrícolas. Trata-se de uma aplicação de linha de comando (CLI) em Python que permite o cadastro, listagem, edição e exclusão de sementes, com dados persistidos em um banco de dados Oracle.
 
-Visando solucionar essa "dor", este sistema oferece uma ferramenta simples e funcional, desenvolvida em Python e operada via terminal (interface de linha de comando). A aplicação se conecta a um banco de dados Oracle para garantir a persistência e a segurança dos dados, permitindo ao produtor realizar as seguintes operações:
+<p align="center">
+<img src="assets/gestao_semente_terminal.png.png" alt="Imagem Gestão de Semente no terminal de comando" border="0" width=30% height=30%>
+</p>
 
-<b>Cadastrar:</b> <br>
-Adicionar novos tipos de sementes ao estoque, com informações de nome, quantidade e data de validade.
+- <b>/mapadotesouro</b>: Neste diretório está o projeto de hardware e IoT. Utilizando uma placa ESP32, sensores de temperatura, umidade e luminosidade, o sistema é projetado para o monitoramento e controle de ambientes agrícolas. O projeto foi desenvolvido com PlatformIO e pode ser simulado no Wokwi.
 
-<b>Listar:</b> <br>
-Visualizar de forma organizada todas as sementes em estoque, com um sistema de status que alerta sobre a proximidade do vencimento.
+<p align="center">
+<img src="assets/mapatesouro.png" alt="Imagem sensor Mapa do Tesouro" border="0" width=30% height=30%>
+</p>
 
-<b>Editar e Excluir:</b> <br>
-Atualizar informações de sementes existentes ou remover itens do estoque.
-
-<b>Buscar:</b> <br>
-Pesquisar rapidamente por uma semente específica pelo nome.
-
-<b>Verificar Validade:</b> <br>
-Gerar um relatório focado em sementes que estão vencidas ou que irão vencer nos próximos 30 dias.
-
-O projeto materializa o conceito de AgroTech ao aplicar tecnologia para resolver um problema prático do campo, oferecendo uma solução robusta para otimizar o controle de insumos, reduzir desperdícios e auxiliar na tomada de decisões estratégicas do produtor rural.
+- <b>/DecisaoComCienciaDeDados</b>: Aqui se encontra a análise de dados do projeto. Utilizando a linguagem R, este componente analisa um conjunto de dados sobre o agronegócio da soja (base_agronegocio_soja_2024.csv) para extrair insights, visualizar tendências e auxiliar na tomada de decisões estratégicas no campo.
 
 
-## 📁 Estrutura de pastas Python e além
+- <b>/README.md</b>: Este arquivo, que serve como guia e explicação geral sobre o projeto.
+
+## 📁 Estrutura de pastas
 
 Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
 
 - <b>assets</b>: aqui estão os arquivos relacionados a elementos não-estruturados deste repositório, como imagens.
 
-- <b>src</b>: Todo o código fonte criado para o desenvolvimento do projeto ao longo das 7 fases.
+- <b>PythonAlem</b>: Todo o código utilizado para o desenvolvimento da solução de software para o gerenciamento de insumos agrícolas.
 
-- <b>README.md</b>: arquivo que serve como guia e explicação geral sobre o projeto (o mesmo que você está lendo agora).
+- <b>mapatesouro</b>: Todo o código utilizado para o monitoramento e controle de ambientes agrícolas.
 
-## 🔧 Como executar o código Python e além
-Antes de começar, garanta que você tenha os seguintes softwares instalados:
+- <b>DecolandoComCienciaDeDados</b>: Todo o código utilizado para analisar um conjunto de dados sobre o agronegócio da soja.
 
-<b>Python:</b> Versão 3.10 ou superior.
+- <b>README.md</b>: Arquivo que serve como guia e explicação geral sobre o projeto (o mesmo que você está lendo agora).
 
-<b>Git:</b> Para clonar o repositório.
+## 🔧 Como executar o código
 
-<b>Acesso a um Banco de Dados Oracle:</b> O sistema foi configurado para se conectar a uma instância Oracle. As credenciais e o endereço do banco precisam ser configurados.
+Entre em cada diretório para poder conseguir executar cada um dos códigos.
 
-<b>1 - Instalação e Configuração</b> <br>
-<b>Clone o repositório:</b> Abra seu terminal e execute o seguinte comando:
+<b>PythonAlem (Gerenciamento de Sementes):</b>
 
-<p align="center">
-<img src="assets/gitcloneN.png" border="0" width=40% height=40%>
-</p>
+Certifique-se de ter o Python e a biblioteca oracledb instalados (pip install oracledb).
 
-<b>2 - Navegue até a pasta do projeto:</b>
+Configure suas credenciais de acesso ao banco de dados Oracle no arquivo database.py ou através de variáveis de ambiente.
 
-cd Fase-2/PythonAlem <br>
-<b>Instale as dependências:</b>
-O projeto requer a biblioteca oracledb para se comunicar com o banco de dados. Instale-a usando o pip:
+Execute o programa principal com o comando: python "Gerenciamento de Sementes.py". <br>
 
-<p align="center">
-<img src="assets/pipInstall.png" border="0" width=40% height=40%>
-</p>
+<b>mapadotesouro (Projeto IoT):</b>
 
-<b>3 - Configure o Banco de Dados:</b><br>
-Crie a tabela de sementes na sua instância Oracle executando o seguinte script SQL:
+É recomendado o uso do Visual Studio Code com a extensão PlatformIO.
 
-<p align="center">
-<img src="assets/createTable.png" border="0" width=40% height=40%>
-</p>
+Abra a pasta do projeto no VS Code.
 
-Abra o arquivo database.py e atualize as variáveis user, password e dsn com as suas credenciais de acesso ao banco de dados Oracle.
+Você pode compilar e enviar o código para uma placa ESP32 física ou iniciar uma simulação no Wokwi (utilizando o arquivo diagram.json). <br>
 
-<b>4 - Execução</b><br>
-Após a configuração, execute o programa principal a partir do terminal, na pasta do projeto:
+<b>DecisaoComCienciaDeDados (Análise em R):</b>
 
-<p align="center">
-<img src="assets/rodar.png" border="0" width=40% height=40%>
-</p>
-O menu interativo da aplicação será exibido no terminal, e você poderá começar a usar o sistema.
+É necessário um ambiente R (como o RStudio).
 
+Abra o script codigodeanalise.r.
+
+Execute o script. Ele irá carregar o arquivo base_agronegocio_soja_2024.xlsx - Página1.csv para realizar a análise estatística e gerar as visualizações.
 
 ## 🗃 Histórico de lançamentos
 
