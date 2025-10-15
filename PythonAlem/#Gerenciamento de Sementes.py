@@ -1,11 +1,5 @@
-#!/usr/bin/env python3
-"""
-Cadastro e Gestão de Sementes - Terminal + CSV (sem Oracle)
-- Interface em terminal: cadastrar, listar, editar, excluir, buscar
-- Armazenamento: arquivo CSV local
-- Validações: datas, quantidades, alerta de validade próxima (30 dias)
-- Compatível com Python 3.10+
-"""
+#Gerenciamento de Sementes.py
+
 import database # Nosso novo arquivo de banco de dados
 import csv
 import os
@@ -20,22 +14,24 @@ ALERTA_DIAS = 30
 # -------------------------
 # Funções auxiliares
 # -------------------------
-def parse_date_iso(text: str) -> Optional[date]:
+
+#Analisa data de entrada no formato Y-m-d e retorna objeto date ou None
+def analise_de_data(text: str) -> Optional[date]:
     try:
         return datetime.strptime(text, "%Y-%m-%d").date()
     except ValueError:
         return None
 
-
-def input_nonempty(prompt: str) -> str:
+# Entrada que não pode ser vazia
+def entrada_naovazia(prompt: str) -> str:
     while True:
         v = input(prompt).strip()
         if v:
             return v
         print("Entrada vazia — tente novamente.")
 
-
-def input_positive_int(prompt: str) -> int:
+# Entrada de inteiro positivo (ou zero)
+def inteiro_positivo(prompt: str) -> int:
     while True:
         v = input(prompt).strip()
         try:
@@ -46,13 +42,13 @@ def input_positive_int(prompt: str) -> int:
         except ValueError:
             print("Digite um número inteiro não-negativo.")
 
-
-def input_date(prompt: str) -> Optional[date]:
+# Entrada de data (ou vazio)
+def entrada_data(prompt: str) -> Optional[date]:
     while True:
         v = input(prompt).strip()
         if v == "":
             return None
-        d = parse_date_iso(v)
+        d = analise_de_data(v)
         if d:
             return d
         print("Formato inválido. Use AAAA-MM-DD ou deixe vazio.")
@@ -87,17 +83,21 @@ def get_next_id(rows: list[dict]) -> int:
 # -------------------------
 # Operações principais
 # -------------------------
-def add_seed():
-    nome = input_nonempty("Nome da semente: ")
-    quantidade = input_positive_int("Quantidade (unidades): ")
-    data_validade = input_date("Data de validade (AAAA-MM-DD) (opcional): ")
+
+# Adiciona uma nova semente
+def adicionar_sementes():
+    nome = entrada_naovazia("Nome da semente: ")
+    quantidade = inteiro_positivo("Quantidade (unidades): ")
+    data_validade = entrada_data("Data de validade (AAAA-MM-DD) (opcional): ")
 
     # A nova função do database.py faz todo o trabalho!
     database.add_seed_db(nome, quantidade, data_validade)
 
 
 # NOVA VERSÃO:
-def list_seeds():
+
+# Lista todas as sementes
+def lista_sementes():
     rows = database.list_seeds_db() # Busca os dados direto do Oracle!
     if not rows:
         print("Nenhuma semente cadastrada.")
@@ -111,7 +111,7 @@ def list_seeds():
         dv_str = r["data_validade"] or "-"
         status = ""
         if r["data_validade"]:
-            dv = parse_date_iso(r["data_validade"])
+            dv = analise_de_data(r["data_validade"])
             if dv:
                 delta = (dv - hoje).days
                 if delta < 0:
@@ -123,15 +123,15 @@ def list_seeds():
 
 # (Substitua as funções correspondentes no seu arquivo principal)
 
-def edit_seed():
-    list_seeds() # Mostra a lista para o usuário saber qual ID editar
+def editar_sementes():
+    lista_sementes() # Mostra a lista para o usuário saber qual ID editar
     rows_in_db = database.list_seeds_db()
     if not rows_in_db:
         print("Nenhuma semente para editar.")
         return
 
     try:
-        seed_id = int(input("ID da semente a editar: ").strip())
+        semente_id = int(input("ID da semente a editar: ").strip())
     except ValueError:
         print("ID inválido.")
         return
@@ -139,7 +139,7 @@ def edit_seed():
     # Encontra a semente original para mostrar os dados atuais
     semente_original = None
     for r in rows_in_db:
-        if int(r['id']) == seed_id:
+        if int(r['id']) == semente_id:
             semente_original = r
             break
             
@@ -163,44 +163,44 @@ def edit_seed():
             print("Quantidade inválida. Deve ser um número inteiro não-negativo.")
             return
 
-    # Para a data, usamos a função input_date que já retorna um objeto date ou None
-    nova_data_obj = input_date(f"Nova data (AAAA-MM-DD | ENTER para manter '{semente_original['data_validade']}'): ")
+    # Para a data, usamos a função entrada_data que já retorna um objeto date ou None
+    nova_data_obj = entrada_data(f"Nova data (AAAA-MM-DD | ENTER para manter '{semente_original['data_validade']}'): ")
     # Se o usuário não digitar nada, precisamos converter a data antiga de string para objeto date
     if nova_data_obj is None:
-        data_final = parse_date_iso(semente_original['data_validade']) if semente_original['data_validade'] else None
+        data_final = analise_de_data(semente_original['data_validade']) if semente_original['data_validade'] else None
     else:
         data_final = nova_data_obj
 
-    if database.edit_seed_db(seed_id, novo_nome, quantidade, data_final):
+    if database.edit_seed_db(semente_id, novo_nome, quantidade, data_final):
         print("Registro atualizado com sucesso.")
     else:
         print("Falha ao atualizar o registro. O ID pode não existir mais.")
 
-
-def delete_seed():
-    list_seeds()
+# Exclui uma semente
+def deletar_semente():
+    lista_sementes()# Mostra a lista para o usuário saber qual ID excluir
     if not database.list_seeds_db():
          print("Nenhuma semente para excluir.")
          return
 
     try:
-        seed_id = int(input("ID da semente a excluir: ").strip())
+        semente_id = int(input("ID da semente a excluir: ").strip())
     except ValueError:
         print("ID inválido.")
         return
 
-    confirm = input(f"Tem certeza que deseja excluir a semente com ID {seed_id}? (s/N): ").lower().strip()
-    if confirm == 's':
-        if database.delete_seed_db(seed_id):
+    confirmar = input(f"Tem certeza que deseja excluir a semente com ID {semente_id}? (s/N): ").lower().strip()
+    if confirmar == 's':
+        if database.delete_seed_db(semente_id):
             print("Registro excluído com sucesso.")
         else:
             print("ID não encontrado.")
     else:
         print("Operação cancelada.")
 
-
-def search_seeds():
-    termo = input_nonempty("Termo de busca: ").lower()
+# Procura sementes por nome 
+def procurar_sementes():
+    termo = entrada_naovazia("Termo de busca: ").lower()
     matches = database.search_seeds_db(termo)
     
     if not matches:
@@ -211,8 +211,8 @@ def search_seeds():
     for r in matches:
         print(f"{r['id']:<5} {r['nome']:<30} {r['quantidade']:<8} {r['data_validade'] or '-'}")
 
-
-def check_expirations():
+# Verifica sementes com validade próxima ou vencida
+def conferir_validade():
     vencidas = database.check_expirations_db(ALERTA_DIAS)
 
     if not vencidas:
@@ -222,7 +222,7 @@ def check_expirations():
     print(f"\nSementes com validade próxima (<= {ALERTA_DIAS} dias):")
     hoje = date.today()
     for r in vencidas:
-        dv = parse_date_iso(r["data_validade"])
+        dv = analise_de_data(r["data_validade"])
         dias = (dv - hoje).days
         status = "VENCIDA" if dias < 0 else f"vence em {dias} dias"
         print(f"[{r['id']}] {r['nome']} — {r['quantidade']} un. — {dv} ({status})")
@@ -243,23 +243,23 @@ def print_menu():
 0) Sair
 """)
 
-
+# Loop principal
 def main():
     while True:
         print_menu()
         op = input("Escolha uma opção: ").strip()
         if op == "1":
-            add_seed()
+            adicionar_sementes()
         elif op == "2":
-            list_seeds()
+            lista_sementes()
         elif op == "3":
-            edit_seed()
+            editar_sementes()
         elif op == "4":
-            delete_seed()
+            deletar_semente()
         elif op == "5":
-            search_seeds()
+            procurar_sementes()
         elif op == "6":
-            check_expirations()
+            conferir_validade()
         elif op == "0":
             print("Saindo... até logo!")
             break
