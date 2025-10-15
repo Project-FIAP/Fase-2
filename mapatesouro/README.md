@@ -22,7 +22,7 @@ O objetivo deste projeto é simular um sistema de irrigação automatizado que d
 Toda a lógica foi implementada em C++ no framework Arduino e testada no simulador Wokwi, que permite a prototipagem de projetos com o ESP32 sem a necessidade do hardware físico.
 
 <p align="center">
-<img src="mapatesouro.png" border="0" width=30% height=30%>
+<img src="assets/mapatesouro.png" border="0" width=30% height=30%>
 </p>
 
 
