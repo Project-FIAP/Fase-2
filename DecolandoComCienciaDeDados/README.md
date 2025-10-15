@@ -12,92 +12,93 @@
 
 ## 👨‍🎓 Integrantes: 
 - <a href="https://www.linkedin.com/company/inova-fusca">Danilo Marques Dantas</a>
-- <a href="https://www.linkedin.com/company/inova-fusca">Marlon Paulino Marinho</a>
-- <a href="https://www.linkedin.com/company/inova-fusca">Pedro Carvalho Rocha Lima</a> 
-- <a href="https://www.linkedin.com/company/inova-fusca">Vinicius Lisboa Porto</a> 
+- <a href="https://www.linkedin.com/in/marlonmarinho/">Marlon Paulino Marinho</a>
+- <a href="https://www.linkedin.com/in/pedro-carvalho-cea-149658137/">Pedro Carvalho Rocha Lima</a> 
+- <a href="https://www.linkedin.com/in/viniciusl7">Vinicius Lisboa Porto</a> 
 - <a href="https://www.linkedin.com/in/vinigama">Vinicius de Santana Gama</a>
 
-## 👩‍🏫 Professores:
-### Tutor(a) 
-- <a href="https://www.linkedin.com/company/inova-fusca">Nome do Tutor</a>
-### Coordenador(a)
-- <a href="https://www.linkedin.com/company/inova-fusca">Nome do Coordenador</a>
 
+## 📜 Descrição
 
-## 📜 Descrição Python e além
+O agronegócio é um dos pilares da economia brasileira, desempenhando um papel essencial na geração de renda, empregos e no fornecimento de alimentos para a população. Diante da crescente demanda global por alimentos e da necessidade de aprimorar a eficiência e a sustentabilidade das práticas agrícolas, a análise de dados tem se tornado uma ferramenta estratégica para apoiar a tomada de decisões nesse setor.<br>
 
-O agronegócio é um dos pilares da economia brasileira, desempenhando um papel essencial na geração de renda, empregos e no fornecimento de alimentos para a população. Diante da crescente demanda global por alimentos e da necessidade de aprimorar a eficiência e a sustentabilidade das práticas agrícolas, a análise de dados tem se tornado uma ferramenta estratégica para apoiar a tomada de decisões nesse setor.
+Nesta atividade, foi desenvolvida uma base de dados representativa do contexto do agronegócio, contendo informações quantitativas e qualitativas sobre aspectos relevantes da produção agrícola. A base inclui variáveis como número de produtores (quantitativa discreta), produtividade média em toneladas por hectare (quantitativa contínua), tipo de cultura (qualitativa nominal) e nível de qualidade da produção (qualitativa ordinal).<br>
 
-Nesta atividade, foi desenvolvida uma base de dados representativa do contexto do agronegócio, contendo informações quantitativas e qualitativas sobre aspectos relevantes da produção agrícola. A base inclui variáveis como número de produtores (quantitativa discreta), produtividade média em toneladas por hectare (quantitativa contínua), tipo de cultura (qualitativa nominal) e nível de qualidade da produção (qualitativa ordinal).
+A partir dessa base de dados, foi realizada uma análise exploratória em R, com o objetivo de compreender o comportamento e a distribuição das variáveis. Para uma das variáveis quantitativas, foram calculadas as medidas de tendência central (média, mediana e moda), as medidas de dispersão (amplitude, variância e desvio padrão) e as medidas separatrizes (quartis e percentis). Além disso, foram construídos gráficos como histograma e boxplot para ilustrar visualmente a distribuição dos dados.<br>
 
-A partir dessa base de dados, foi realizada uma análise exploratória em R, com o objetivo de compreender o comportamento e a distribuição das variáveis. Para uma das variáveis quantitativas, foram calculadas as medidas de tendência central (média, mediana e moda), as medidas de dispersão (amplitude, variância e desvio padrão) e as medidas separatrizes (quartis e percentis). Além disso, foram construídos gráficos como histograma e boxplot para ilustrar visualmente a distribuição dos dados.
+Também foi escolhida uma variável qualitativa, para a qual foi elaborada uma análise gráfica por meio de gráficos de barras, permitindo observar a frequência e a predominância das categorias analisadas.<br>
 
-Também foi escolhida uma variável qualitativa, para a qual foi elaborada uma análise gráfica por meio de gráficos de barras, permitindo observar a frequência e a predominância das categorias analisadas.
-
-A realização desta atividade possibilitou aplicar conceitos estatísticos e ferramentas de programação em R em um contexto real do agronegócio, demonstrando como a ciência de dados pode auxiliar na interpretação de informações e no apoio à tomada de decisão estratégica no setor.
+A realização desta atividade possibilitou aplicar conceitos estatísticos e ferramentas de programação em R em um contexto real do agronegócio, demonstrando como a ciência de dados pode auxiliar na interpretação de informações e no apoio à tomada de decisão estratégica no setor.<br>
 
 
 
-## 📁 Estrutura de pastas
+## 📁 Estrutura de pastas/arquivos
 
-Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
+<b>.Rhistory:</b> Salva o histórico de todos os comandos digitados no console do R durante uma sessão de trabalho, facilitando a revisão e a reutilização de códigos. <br>
 
-- <b>.github</b>: Nesta pasta ficarão os arquivos de configuração específicos do GitHub que ajudam a gerenciar e automatizar processos no repositório.
+<b>base_agronegocio_soja_2024.xlsx - Página1.csv:</b> É o arquivo de dados brutos em formato CSV. Ele contém todas as informações sobre o agronegócio da soja que são utilizadas como base para a análise.<br>
 
-- <b>assets</b>: aqui estão os arquivos relacionados a elementos não-estruturados deste repositório, como imagens.
+<b>codigodeanalise.r:</b> O script principal do projeto. Contém o código em linguagem R que realiza a leitura, o tratamento, a análise estatística e a visualização dos dados do arquivo CSV.<br>
 
-- <b>config</b>: Posicione aqui arquivos de configuração que são usados para definir parâmetros e ajustes do projeto.
+<b>README.md:</b> O documento de texto que descreve o projeto. Explica o objetivo da análise, a estrutura dos arquivos e como executar o código.<br>
 
-- <b>document</b>: aqui estão todos os documentos do projeto que as atividades poderão pedir. Na subpasta "other", adicione documentos complementares e menos importantes.
+<b>.DS_Store:</b> Um arquivo oculto gerado pelo sistema operacional macOS para armazenar as preferências de visualização de uma pasta. Não tem função direta no projeto e geralmente é ignorado.<br>
 
-- <b>scripts</b>: Posicione aqui scripts auxiliares para tarefas específicas do seu projeto. Exemplo: deploy, migrações de banco de dados, backups.
-
-- <b>src</b>: Todo o código fonte criado para o desenvolvimento do projeto ao longo das 7 fases.
-
-- <b>README.md</b>: arquivo que serve como guia e explicação geral sobre o projeto (o mesmo que você está lendo agora).
+<b>.RData:</b> É o arquivo de workspace do R. Ele salva todos os objetos (variáveis, dataframes, funções, etc.) criados na memória durante a sessão de análise, permitindo que o trabalho seja retomado posteriormente.<br>
 
 ## 🔧 Como executar o código
 
-Pré-requisitos
-Antes de começar, garanta que você tenha os seguintes softwares instalados:
+<b>Pré-requisitos: Software Necessário</b> <br>
+Antes de começar, você precisará de dois programas instalados:
 
-Python: Versão 3.10 ou superior.
+<b>R:</b> A linguagem de programação. Baixe a versão mais recente para o seu sistema operacional no site oficial do R.<br>
 
-Git: Para clonar o repositório.
+<b>RStudio:</b> Um ambiente de desenvolvimento (IDE) que facilita o uso do R. Baixe a versão gratuita (Desktop) no site oficial do RStudio.<br>
 
-RStudio: Para analise estatistica 
+<b>Git (Opcional, mas recomendado):</b> Para baixar o projeto diretamente do GitHub. Baixe no site oficial do Git.<br>
 
+<b>Passo 1: Obter os Arquivos do Projeto</b> <br>
 
-Instalação e Configuração
-Clone o repositório:
-Abra seu terminal e execute o seguinte comando:
+Abra o terminal (ou Git Bash no Windows).<br>
 
-Bash
+Navegue até a pasta onde você deseja salvar o projeto (ex: cd Documentos).<br>
 
-git clone https://github.com/Project-FIAP/Fase-2.git
-Navegue até a pasta do projeto:
+Execute o seguinte comando para clonar o repositório:<br>
 
-Bash
+<p align="center">
+<img src="assets/gitcloneN.png" border="0" width=40% height=40%>
+</p>
 
-cd Fase-2/python_e_alem
-Instale as dependências:
-O projeto requer a biblioteca oracledb para se comunicar com o banco de dados. Instale-a usando o pip:
+<b>Passo 2: Abrir o Projeto e Instalar Pacotes</b><br>
+Abra o RStudio.<br>
 
-Bash
+Vá em File > Open Project....<br>
 
-pip install oracledb
-Configure o Banco de Dados:
-A. Crie a tabela de sementes na sua instância Oracle executando o seguinte script SQL:
+Navegue até a pasta Fase-2 que você clonou ou extraiu, entre no subdiretório DecisaoComCienciaDeDados e abra o arquivo de projeto, se houver um com a extensão .Rproj. Caso não haja, simplesmente vá em File > Open File... e abra o arquivo codigodeanalise.r.<br>
 
+Com o script codigodeanalise.r aberto, verifique as primeiras linhas por comandos como library(...). Eles indicam quais pacotes são necessários.<br>
 
+Para instalar qualquer pacote que falte, vá ao painel Console no RStudio e digite:<br>
 
+<b>install.packages("nome_do_pacote")</b>
+
+<b>Passo 3: Executar o Script de Análise</b><br>
+Agora que o ambiente está pronto, você pode rodar o código.<br>
+
+Para executar o script inteiro de uma vez:<br>
+
+Com o arquivo codigodeanalise.r em foco, clique no botão Source no canto superior direito do editor de código.<br>
+
+<b>Passo 4: Verificar os Resultados</b><br>
+Enquanto o código executa, observe os painéis do RStudio:<br>
+
+Console (inferior esquerdo): Exibe mensagens, saídas de texto, tabelas e possíveis erros.<br>
+
+Plots (inferior direito): Mostra todos os gráficos e visualizações gerados pelo script.<br>
+
+Environment (superior direito): Lista os dataframes (tabelas de dados) e variáveis criados durante a execução.<br>
 
 ## 🗃 Histórico de lançamentos
 
 * 0.1.0 - 15/10/2024
   
-
-## 📋 Licença
-
-<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/agodoi/template">MODELO GIT FIAP</a> por <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://fiap.com.br">Fiap</a> está licenciado sobre <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Attribution 4.0 International</a>.</p>
-
