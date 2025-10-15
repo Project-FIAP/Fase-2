@@ -8,7 +8,7 @@
 
 # FarmTech
 
-## Nome do grupo
+## IA_Underground
 
 ## 👨‍🎓 Integrantes: 
 - <a href="https://www.linkedin.com/company/inova-fusca">Danilo Marques Dantas</a>
