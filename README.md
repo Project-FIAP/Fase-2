@@ -6,9 +6,9 @@
 
 <br>
 
-# FarmTech
+# FarmTech Solutions
 
-## IA Underground
+## IA_Underground
 
 ## 👨‍🎓 Integrantes: 
 - <a href="https://www.linkedin.com/company/inova-fusca">Danilo Marques Dantas</a>
