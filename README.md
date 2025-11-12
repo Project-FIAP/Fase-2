@@ -6,9 +6,6 @@
 
 <br>
 
-# Etapas de uma Máquina Agrícola
-# <a href="">Link vídeo no Youtube</a>
-
 ## IA_Underground
 
 ## 👨‍🎓 Integrantes: 
