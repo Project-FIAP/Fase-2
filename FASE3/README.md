@@ -6,7 +6,7 @@
 
 <br>
 
-# Etapas de uma Máquina Agrícola
+# Etapas de uma Máquina Agrícola / A primeira técnica de aprendizado de máquina
 # <a href="">Link vídeo no Youtube</a>
 
 ## IA_Underground
