@@ -56,9 +56,9 @@ O foco da lição é consolidar o entendimento sobre:
 
 Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
 
-- <b>FIAP</b>: Arquivo utilizado que contém todo o script utilizado para a criação da atividade "Etapas de uma Máquina Agrícola"
+- <b>FIAP.sql</b>: Arquivo utilizado que contém todo o script utilizado para a criação da atividade "Etapas de uma Máquina Agrícola"
 
-- <b>FASE2</b>: Arquivo utilizado que contém todo o script utilizado para a criação da atividade "A primeira técnica de aprendizado de máquina"
+- <b>A_primeira_técnica_de_aprendizado_de_máquina</b>: Arquivo utilizado que contém todo o script utilizado para a criação da atividade "A primeira técnica de aprendizado de máquina"
 
 - <b>assets</b>: aqui estão os arquivos relacionados a elementos não-estruturados deste repositório, como imagens.
 
