@@ -1,13 +1,13 @@
 # FIAP - Faculdade de Informática e Administração Paulista
 
 <p align="center">
-<a href= "https://www.fiap.com.br/"><img src="assets/logo-fiap.png" alt="FIAP - Faculdade de Informática e Admnistração Paulista" border="0" width=40% height=40%></a>
+<a href= "https://www.fiap.com.br/"><img src="FASE2/assets/logo-fiap.png" alt="FIAP - Faculdade de Informática e Admnistração Paulista" border="0" width=40% height=40%></a>
 </p>
 
 <br>
 
-# FarmTech Solutions
-# <a href="https://youtu.be/cqdMUJCMDng">Link vídeo no Youtube - Mapa do Tesouro</a>
+# Etapas de uma Máquina Agrícola
+# <a href="">Link vídeo no Youtube</a>
 
 ## IA_Underground
 
@@ -20,23 +20,18 @@
 
 ## 📜 Descrição
 
-O PBL (Project-Based Learning) do curso de Inteligência Artificial é uma jornada que simula o crescimento de uma startup.
- No nosso caso, essa startup é a FarmTech Solutions, que atua (de forma fictícia) como uma consultoria em soluções para o setor do agronegócio:
+Este projeto tem como objetivo a criação de um Banco de Dados Oracle para o armazenamento dos dados do “mapadotesouro”, originalmente desenvolvidos na FASE 2 do curso.
 
-- <b>/FASE1</b>: Contém o código utilizado para o desenvolvimento da solução de software para o gerenciamento de insumos agrícolas. Trata-se de uma aplicação de linha de comando (CLI) em Python que permite o cadastro, listagem, edição e exclusão de sementes, com dados persistidos em um banco de dados Oracle.
+Os dados utilizados nesta atividade foram reaproveitados de uma lição anterior, servindo como base prática para consultas e manipulação em SQL na FASE 3.
 
-<p align="center">
-<img src="assets/gestao_semente_terminal.png" alt="Imagem Gestão de Semente no terminal de comando" border="0" width=30% height=30%>
-</p>
+Durante o exercício, foram realizadas operações básicas de consulta (SELECT) utilizando a tabela tabelasensor, que contém informações sobre umidade, pH e nutrientes do solo (nitrogênio, fósforo e potássio), além do status de irrigação.
 
-- <b>/mapadotesouro</b>: Neste diretório está o projeto de hardware e IoT. Utilizando uma placa ESP32, sensores de temperatura, umidade e luminosidade, o sistema é projetado para o monitoramento e controle de ambientes agrícolas. O projeto foi desenvolvido com PlatformIO e pode ser simulado no Wokwi.
+O foco da lição é consolidar o entendimento sobre:
 
-<p align="center">
-<img src="assets/mapatesouro.png" alt="Imagem sensor Mapa do Tesouro" border="0" width=30% height=30%>
-</p>
-
-- <b>/DecisaoComCienciaDeDados</b>: Aqui se encontra a análise de dados do projeto. Utilizando a linguagem R, este componente analisa um conjunto de dados sobre o agronegócio da soja (base_agronegocio_soja_2024.csv) para extrair insights, visualizar tendências e auxiliar na tomada de decisões estratégicas no campo.
-
+- Criação e estruturação de tabelas em Oracle SQL;
+- Inserção e leitura de dados;
+- Execução de consultas simples e ordenadas;
+- Interpretação dos resultados para análise de dados de sensores.
 
 - <b>/README.md</b>: Este arquivo, que serve como guia e explicação geral sobre o projeto.
 
@@ -44,43 +39,21 @@ O PBL (Project-Based Learning) do curso de Inteligência Artificial é uma jorna
 
 Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
 
-- <b>assets</b>: aqui estão os arquivos relacionados a elementos não-estruturados deste repositório, como imagens.
+- <b>FASE1</b>: Todos os projetos da FASE1
 
-- <b>PythonAlem</b>: Todo o código utilizado para o desenvolvimento da solução de software para o gerenciamento de insumos agrícolas.
+- <b>FASE2</b>: Todos os projetos da FASE2
 
-- <b>mapatesouro</b>: Todo o código utilizado para o monitoramento e controle de ambientes agrícolas.
-
-- <b>DecolandoComCienciaDeDados</b>: Todo o código utilizado para analisar um conjunto de dados sobre o agronegócio da soja.
+- <b>FASE3</b>: Todos os projetos da FASE3
 
 - <b>README.md</b>: Arquivo que serve como guia e explicação geral sobre o projeto (o mesmo que você está lendo agora).
 
 ## 🔧 Como executar o código
 
-Entre em cada diretório para poder conseguir executar cada um dos códigos.
+- Clone este repositório;
+- Acesse o Oracle SQL Developer;
+- Conecte-se ao seu banco de dados Oracle com um usuário válido;
+- Crie a tabela base utilizada no projeto executando o comando:****
 
-<b>PythonAlem (Gerenciamento de Sementes):</b>
-
-Certifique-se de ter o Python e a biblioteca oracledb instalados (pip install oracledb).
-
-Configure suas credenciais de acesso ao banco de dados Oracle no arquivo database.py ou através de variáveis de ambiente.
-
-Execute o programa principal com o comando: python "Gerenciamento de Sementes.py". <br>
-
-<b>mapadotesouro (Projeto IoT):</b>
-
-É recomendado o uso do Visual Studio Code com a extensão PlatformIO.
-
-Abra a pasta do projeto no VS Code.
-
-Você pode compilar e enviar o código para uma placa ESP32 física ou iniciar uma simulação no Wokwi (utilizando o arquivo diagram.json). <br>
-
-<b>DecisaoComCienciaDeDados (Análise em R):</b>
-
-É necessário um ambiente R (como o RStudio).
-
-Abra o script codigodeanalise.r.
-
-Execute o script. Ele irá carregar o arquivo base_agronegocio_soja_2024.xlsx - Página1.csv para realizar a análise estatística e gerar as visualizações.
 
 ## 🗃 Histórico de lançamentos
 
