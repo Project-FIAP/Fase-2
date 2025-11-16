@@ -29,6 +29,8 @@ Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
 
 - <b>FASE3</b>: Todos os projetos da FASE3
 
+- <b>FASE4</b>: Todos os projetos da FASE4
+
 - <b>README.md</b>: Arquivo que serve como guia e explicação geral sobre o projeto (o mesmo que você está lendo agora).
 
 
